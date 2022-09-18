@@ -1,33 +1,32 @@
-# %pip install paho-mqtt
 import paho.mqtt.client as mqtt
+import json
 import csv
+from datetime import datetime
+dt = datetime.now()
+daten = str(datetime.now().date())
 
-data_header = ['Position', 'Time']
+file_name = "Exercise_Log_" + daten;
+
+data_header = ['Position', 'Duration','Date','Time']
+f = open(file_name, "a", newline="")
+writer = csv.writer(f)
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
     client.subscribe("PositionCheck")
 
-with open('result.csv', 'w') as file:
-    writer = csv.writer(file , delimiter= ',')
-    writer.writerow(data_header)
 
-# check payload 
 def on_message(client, userdata, msg):
-    print( msg.topic + " " + str(msg.payload))
+    #print(str(msg.payload))
+    message = msg.payload.decode()
+    DictPos = json.loads(message)
+    date = datetime.now().date()
+    time = datetime.now().time()
+    print(list(DictPos.values())[0]," , ", list(DictPos.values())[1],date,time)
+    temp = (list(DictPos.values())[0] , list(DictPos.values())[1],date,time)
+    
+    writer.writerow(temp)
 
-    if msg.payload == "Sitting":
-        print("User is at low position")
-
-    if msg.payload == "Crossbar":
-        print("User is at mid position")
-
-    if msg.payload == "Standing":
-        print("User is at high position")
-        
-    writer.writerow(msg.payload)
-     
-# connent to publisher
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
