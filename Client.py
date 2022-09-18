@@ -1,13 +1,20 @@
 # %pip install paho-mqtt
 import paho.mqtt.client as mqtt
- 
+import csv
+
+data_header = ['Position', 'Time']
+
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
     client.subscribe("PositionCheck")
- 
+
+with open('result.csv', 'w') as file:
+    writer = csv.writer(file , delimiter= ',')
+    writer.writerow(data_header)
+
 # check payload 
 def on_message(client, userdata, msg):
-    print(msg.topic+" "+str(msg.payload))
+    print( msg.topic + " " + str(msg.payload))
 
     if msg.payload == "Sitting":
         print("User is at low position")
@@ -17,7 +24,9 @@ def on_message(client, userdata, msg):
 
     if msg.payload == "Standing":
         print("User is at high position")
-
+        
+    writer.writerow(msg.payload)
+     
 # connent to publisher
 client = mqtt.Client()
 client.on_connect = on_connect
