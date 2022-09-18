@@ -4,7 +4,7 @@ import csv
 from datetime import datetime
 
 datenow = str(datetime.now())
-name = "Exercise_Log_" + datenow
+name = "Exercise_Log:" + datenow
 f = open(name, "a", newline="")
 
 def on_connect(client, userdata, flags, rc):
