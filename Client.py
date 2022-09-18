@@ -20,7 +20,7 @@ def on_message(client, userdata, msg):
         f.close()
     DictPos = json.loads(message)
 
-
+ 
     date = datetime.now().date()
     time1 = datetime.now().time()
     temp = (list(DictPos.values())[0] , list(DictPos.values())[1], date, time1)
