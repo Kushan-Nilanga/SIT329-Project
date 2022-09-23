@@ -47,27 +47,29 @@ def on_message(client, userdata, msg):
 
 
 #yet to work. needs adjusting
-def average_column (csv):
-    f = open(csv,"r")
-    average = 0
-    Sum = 0
-    row_count = 0
-    for row in f:
-        for column in row.split(','):
-            n=float(column)
-            Sum += n
-        row_count += 1
-    average = Sum / len(column)
-    f.close()
-    return 'The average is:', average 
+# def average_column (csv):
+#     f = open(csv,"r")
+#     average = 0
+#     Sum = 0
+#     row_count = 0
+#     for row in f:
+#         for column in row.split(','):
+#             n=float(column)
+#             Sum += n
+#         row_count += 1
+#     average = Sum / len(column)
+#     f.close()
+#     return 'The average is:', average 
 
 
 def analysisReport(path, name):
     print("TIME NOW: " , name)
     address = path+name+".csv"
     df = pd.read_csv(rf'{address}')
+    count1 = df['POSITION'].count()
     print(df)
-
+    print(f"Count {count1}")
+ 
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
@@ -76,13 +78,3 @@ client.connect("test.mosquitto.org", 1883, 60)
 client.loop_forever()
     
 
-
-    # def on_message(client, userdata, msg):
-    # #print(str(msg.payload))
-    # message = msg.payload.decode()
-    # DictPos = json.loads(message)
-
-    # if list(DictPos.values())[0] == "End of Session":
-    #     print("Session terminated by user")
-    #     f.close()
-    #     exit(0)
