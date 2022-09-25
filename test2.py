@@ -25,10 +25,10 @@ Matrix = [('TopTube',[True,False,True,True]),
             ('Pantani',[True,False,False,False]),
             ('Froome',[True,False,True,False]),
             ('Elbows',[False,True,False,False])]
-
+ 
 threshold = [4,6,3,5]
 # print(Inputs)
-
+ 
 def publishState( matrix,  timerLapsed):
     posDict = {"positon": None, "time":0 }
 

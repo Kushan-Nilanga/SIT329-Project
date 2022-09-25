@@ -16,10 +16,10 @@ df.loc['Total'] = pd.Series(df['DURATION'].sum(), index = ['DURATION'])
 print(df)
 # print(f"Count {count1}")
 
-
+ 
 # new1 = (df["POSITION"].str.contains("sitting"))
 # print(new1)
-
+ 
 new2 = (df["POSITION"].value_counts()["sitting"])
 SittingDuration = (df.loc[df["POSITION"] == "sitting"].sum()["DURATION"])
 StandingDuration = (df.loc[df["POSITION"] == "standing"].sum()["DURATION"])

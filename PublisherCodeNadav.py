@@ -18,8 +18,8 @@ def on_connect(client, userdata, flags, rc):
         print(f"Connected fail with code {rc}")
 
 
-
-
+ 
+ 
 Position = ["sitting", "standing" , "crossbar" ]
 
 # Testing inputs to simulate 4 sensors. 
