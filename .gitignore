@@ -3,10 +3,10 @@
 output_files/
 incremental_db/
 db/
-.DS_Store
 *.bak
 *.sdc
 *.qws
 *.qsf
 *.qpf
 *_dump.txt
+.DS_Store

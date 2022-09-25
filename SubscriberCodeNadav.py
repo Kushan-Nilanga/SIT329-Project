@@ -37,7 +37,7 @@ def on_message(client, userdata, msg):
         temp = (list(DictPos.values())[0] , list(DictPos.values())[1], date, time1)
         writer.writerow(temp)
         print(list(DictPos.values())[0]," , ", list(DictPos.values())[1])
-
+ 
 
 def analysisReport(path, name):
     print(f"\n===== Session: {name} ======")
