@@ -10,5 +10,5 @@ db/
 *.qpf
 *_dump.txt
 .DS_Store
-**/.DS_Store
+
  

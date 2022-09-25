@@ -25,7 +25,7 @@ SittingDuration = (df.loc[df["POSITION"] == "sitting"].sum()["DURATION"])
 StandingDuration = (df.loc[df["POSITION"] == "standing"].sum()["DURATION"])
 CrossbarDuration = (df.loc[df["POSITION"] == "crossbar"].sum()["DURATION"])
 Total = SittingDuration + StandingDuration + CrossbarDuration
-
+ 
 
 print("\n_____Totals are:______ "+
     "\nSitting: \t %.2f"%SittingDuration+

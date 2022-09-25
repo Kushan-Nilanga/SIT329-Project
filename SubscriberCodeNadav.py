@@ -37,34 +37,12 @@ def on_message(client, userdata, msg):
         temp = (list(DictPos.values())[0] , list(DictPos.values())[1], date, time1)
         writer.writerow(temp)
         print(list(DictPos.values())[0]," , ", list(DictPos.values())[1])
-<<<<<<< HEAD:SubscriberCodeNadav.py
  
-=======
-
-
-
-#yet to work. needs adjusting
-# def average_column (csv):
-#     f = open(csv,"r")
-#     average = 0
-#     Sum = 0
-#     row_count = 0
-#     for row in f:
-#         for column in row.split(','):
-#             n=float(column)
-#             Sum += n
-#         row_count += 1
-#     average = Sum / len(column)
-#     f.close()
-#     return 'The average is:', average 
-
->>>>>>> main:ClientNew.py
 
 def analysisReport(path, name):
     print(f"\n===== Session: {name} ======")
     address = path+name+".csv"
     df = pd.read_csv(rf'{address}')
-<<<<<<< HEAD:SubscriberCodeNadav.py
     # new2 = (df["POSITION"].value_counts()["sitting"])
     TopTubeDuration = (df.loc[df["POSITION"] == "TopTube"].sum()["DURATION"])
     PantaniDuration = (df.loc[df["POSITION"] == "Pantani"].sum()["DURATION"])
@@ -81,12 +59,6 @@ def analysisReport(path, name):
         "\nElbows: \t %.2f"%ElbowsDuration+
         "\nTotal: \t \t %.2f"%Total)
     
-=======
-    count1 = df['POSITION'].count()
-    print(df)
-    print(f"Count {count1}")
- 
->>>>>>> main:ClientNew.py
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
@@ -94,10 +66,4 @@ client.on_message = on_message
 client.connect("test.mosquitto.org", 1883, 60)
 client.loop_forever()
     
-<<<<<<< HEAD:SubscriberCodeNadav.py
 # new file
-=======
-
-
-
->>>>>>> main:ClientNew.py
