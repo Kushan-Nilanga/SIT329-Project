@@ -17,7 +17,7 @@ def on_connect(client, userdata, flags, rc):
     else:
         print(f"Connected fail with code {rc}")
 
-
+ 
  
  
 Position = ["sitting", "standing" , "crossbar" ]
