@@ -36,12 +36,10 @@ Matrix = [('TopTube',[True,False,True,True]),
             ('Pantani',[True,False,False,False]),
             ('Froome',[True,False,True,False]),
             ('Elbows',[False,True,False,False])]
-<<<<<<< HEAD
-=======
- 
+
 threshold = [2000, 2000, 2000, 2000]
 # print(Inputs)
->>>>>>> 1b79ca6c097ea83c1ecdfc19821b82f333cbbd4f
+
 
 # Threshold values for each sensor
 threshold = [2000, 2000, 2000, 2000]
