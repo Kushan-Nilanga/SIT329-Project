@@ -6,7 +6,11 @@ import pandas as pd
 
 
 #change path accordingly 
+<<<<<<< HEAD
 PATH = '/Users/nadav/Desktop/Uni/2022_tri_2/SIT329/Project/code/SIT329-Project/testingCSVfiles/'
+=======
+PATH = '/Users/nadav/Desktop/Uni/2022_tri_2/SIT329/Project/code/SIT329-Projectç/testingCSVfiles/'
+>>>>>>> 1b79ca6c097ea83c1ecdfc19821b82f333cbbd4f
 
 # Takes in time and date of start of 
 # session to include in CSV file name
